@@ -1,5 +1,4 @@
-from configuration import initialization,driver,service
-import operator
+from configuration import initialization,driver,service,pd
 initialization()
 
 PlacasDeChoferesNoActivos = []
@@ -21,5 +20,8 @@ for i in range(len(driver)):
     for k,v in servicios.items():
         if k== driver["Vehicle_License_Number"][i]:
             NombreServicioCNA[driver["Name"][i]]=v
-sortedDict = sorted(NombreServicioCNA.items(), key=operator.itemgetter(1), reverse=True)
-print(sortedDict)
+            break
+        
+res= pd.DataFrame(list(zip(NombreServicioCNA.keys(),NombreServicioCNA.values())),columns=['Name','NumberOfTrips'])
+res.to_csv('item3.csv')
+print(res)

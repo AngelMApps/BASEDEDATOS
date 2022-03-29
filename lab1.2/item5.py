@@ -1,4 +1,4 @@
-from configuration import initialization,eliminar,driver,service
+from configuration import initialization,eliminar,driver,service,pd
 initialization()
 
 
@@ -15,4 +15,5 @@ for i in range(0,len(driver)):
         Business.append(driver["Base_Name"][i])
 
 Business=eliminar(Business)
-print(Business)
+
+print(len(Business))
