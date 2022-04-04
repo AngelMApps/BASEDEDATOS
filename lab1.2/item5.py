@@ -16,4 +16,7 @@ for i in range(0,len(driver)):
 
 Business=eliminar(Business)
 
-print(len(Business))
+res= pd.DataFrame(list(zip(Business)),columns=['Base Name'])
+res.to_csv('item5.csv')
+print(res)
+
